@@ -1,2 +1,2 @@
 # blue-navigator
-Find your destination classroom in UM!
+> Find your destination classroom in UM!
