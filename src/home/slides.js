@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import request from 'request';
 import Slide from './slide';
 import Searchbox from '../components/searchbox';
-import {API_ENDPOINT} from '../common';
 import './slides.css';
 import {WindowContext} from "../App";
 
@@ -18,19 +17,23 @@ class Slides extends Component {
     }
 
     componentDidMount() {
-        request.get({url: `${API_ENDPOINT}/slide`, json: true}, (error, response, body) => {
-            if (response && response.statusCode === 200 && body.length > 1) {
-                this.setState({urls: body, index: 0});
-                for (let index of [0, 1]) {
-                    this.loadImage(body, index);
-                }
-            }
-        });
+        let images =
+            [
+                "https://s3.amazonaws.com/eecs493/blue-navigator/umich-1.jpg",
+                "https://s3.amazonaws.com/eecs493/blue-navigator/umich-2.jpg",
+                "https://s3.amazonaws.com/eecs493/blue-navigator/umich-3.jpg",
+                "https://s3.amazonaws.com/eecs493/blue-navigator/umich-4.jpg"];
+        this.setState({urls: images, index: 0});
+        for (let index of [0, 1]) {
+            this.loadImage(images, index);
+        }
     }
 
     updateImage() {
         let nextIndex;
-        if (this.state[`imgSrc-${this.getNextIndex()}`] && this.state[`imgWidth-${this.getNextIndex()}`] && this.state[`imgHeight-${this.getNextIndex()}`]) {
+        if (this.state[`imgSrc-${this.getNextIndex()}`]
+            && this.state[`imgWidth-${this.getNextIndex()}`]
+            && this.state[`imgHeight-${this.getNextIndex()}`]) {
             nextIndex = this.getNextIndex();
         } else {
             nextIndex = 0;
@@ -75,7 +78,10 @@ class Slides extends Component {
                              height: windowHeight,
                              width: windowWidth,
                          }}>
-                        {(this.state && this.state.hasOwnProperty('index') && this.state[`imgSrc-${this.state.index}`] && this.state[`imgWidth-${this.state.index}`] && this.state[`imgHeight-${this.state.index}`]) &&
+                        {(this.state && this.state.hasOwnProperty('index')
+                            && this.state[`imgSrc-${this.state.index}`]
+                            && this.state[`imgWidth-${this.state.index}`]
+                            && this.state[`imgHeight-${this.state.index}`]) &&
                         <Slide
                             key={this.state.index}
                             imgSrc={this.state[`imgSrc-${this.state.index}`]}
