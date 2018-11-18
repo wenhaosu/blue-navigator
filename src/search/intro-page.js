@@ -6,14 +6,13 @@ import buildingInfo from '../static/building-intro-info';
 class IntroPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-        };
+        this.state = {};
     }
 
     componentDidMount() {
         this.setState({
-            url: buildingInfo[this.props.building].img,
-            intro: buildingInfo[this.props.building].intro
+            url: buildingInfo[this.props.building] ? buildingInfo[this.props.building].img : "",
+            intro: buildingInfo[this.props.building] ? buildingInfo[this.props.building].intro : ""
         });
     }
 
@@ -21,10 +20,12 @@ class IntroPage extends Component {
         return (
             <div className="intro-page">
                 <div className="image">
-                    <img src={this.state.url} alt="building"/>
+                    {this.state.url ? <img src={this.state.url} alt="building"/> :
+                        <img src={"https://s3.amazonaws.com/eecs493/blue-navigator/noimage.jpg"} alt="building"/>}
+
                 </div>
                 <div className="intro">
-                    {this.state.intro}
+                    {this.state.intro ? this.state.intro : "No intro available."}
                 </div>
             </div>
         );

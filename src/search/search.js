@@ -3,9 +3,6 @@ import './search.css';
 import * as qs from 'query-string';
 import IntroPage from "./intro-page";
 import {WindowContext} from '../App';
-import Slides from "../home/slides";
-import Pitch from "../home/pitch";
-import Footer from "../components/footer";
 
 class Search extends Component {
     constructor(props) {

@@ -29,11 +29,58 @@
 .searchbox input {
     width: calc(100% - 50px);
     height: 100%;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
     box-sizing: border-box;
     border-style: none;
     outline: none;
     background-color: rgba(200, 200, 200, 0);
     color: #ffffff;
     font-size: 20px;
+}
+
+.dark-theme {
+    --styled-select-placeholder__color: white;
+    --styled-select__color: white;
+    --styled-select__background-color: rgba(66,66,66,0.5);
+    --styled-select__border-radius: 5px;
+
+    --styled-select-menu-outer__margin: 0;
+    --styled-select-menu-outer__padding: 0;
+    --styled-select-menu-outer__background-color: rgba(66,66,66,0.5);
+
+    --styled-select-option__background-color: rgba(66,66,66,0.5);
+
+    --styled-select-option__color--focused: #eee;
+    --styled-select-option__background-color--focused: #333;
+
+    --styled-select-option__color--selected: #eee;
+    --styled-select-option__background-color--selected: rgba(66,66,66,0.5);
+}
+
+.search-building {
+    position: relative;
+    width: 50%;
+    height: 50px;
+    float: left;
+}
+
+.search-room {
+    position: relative;
+    width: 40%;
+    height: 50px;
+    float: left;
+    padding-left: 1%;
+}
+
+.search-icon {
+    position: relative;
+    width: 8%;
+    height: 37px;
+    color: white;
+    float: left;
+    padding-left: 1%;
+}
+
+.search-icon:hover {
+    color: #cdcdcd;
 }
