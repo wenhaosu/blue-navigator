@@ -1,0 +1,46 @@
+.intro-box {
+    box-shadow: 0 0 10px 5px #cdcdcd;
+    height: 60vh;
+    position: absolute;
+    top: 20vh;
+    left: 5vw;
+    right: 5vw;
+}
+
+.intro-box .left {
+    position: relative;
+    width: 40%;
+    height: 60vh;
+    background-color: red;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.intro-box .right {
+    position: relative;
+    width: 60%;
+    height: 60vh;
+    /*background-color: blue;*/
+    overflow: hidden;
+    display: inline-block;
+}
+
+.intro-box .image {
+    position: relative;
+    width: auto;
+    height: 60vh;
+}
+
+.intro-box .image > img {
+    width: 100%;
+}
+
+.intro-box .building-title {
+    font-family: 'CenturyGothic', serif;
+}
+
+.intro-box .doc {
+    font-family: 'SegoeUI', serif;
+    padding: 20px;
+    color: #666666;
+}

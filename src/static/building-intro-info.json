@@ -1,9 +1,11 @@
 {
   "bbb": {
+    "name": "Bob and Betty Beyster Building",
     "img": "https://s3.amazonaws.com/eecs493/blue-navigator/bbb.jpg",
     "intro": "The Bob and Betty Beyster Building, completed in 2005 and built with alumni funds, is the home of CSE and a destination for events and gatherings on the U-M North Campus. Designed to bring in and reflect natural light and featuring a spacious four-story atrium along with 100,000 square feet of lab, office, and meeting space, the Beyster Building encourages and precipitates interaction, creativity, and collaboration.\nNamed for four-time U-M alumnus, entrepreneur, and philanthropist Dr. J. Robert Beyster and his wife Betty, the Beyster Building features a spectacular spiral staircase that winds by lounge areas on each floor which offer faculty and students places to mingle or hold impromptu meetings. Inside the diag entrance to the atrium, visitors will find one of the most significant remaining displays of the ENIAC – announced in 1946 and widely considered to be the first electronic general-purpose computer – which was built in part by Arthur Burks, founder of the program in computing at Michigan."
   },
   "ggbrown": {
+    "name": "G.G.Brown",
     "img": "https://s3.amazonaws.com/eecs493/blue-navigator/ggbrown.jpg",
     "intro": "G.G. Brown was born in New York City on September 3, 1896. He received a bachelor’s degree in chemical engineering from New York University in 1917 and after graduation took a job with the Aluminum Company of America at Massena, New York. In 1918, he served in the Chemical Warfare Service at the American University of Washington, D.C., and in 1920, while Brown was at the Union Special Machine Company of Chicago, Michigan Engineering’s chemical engineering department Chair A. H. White recruited him as an instructor in chemical engineering.\nUniversity announced that a group of engineering buildings proposed on North Campus would be known as the George Granger Brown Memorial Laboratories. The building would include a laboratory for fluids engineering, another for materials, metallurgy and structures, and a lab to study highways. The G.G. Brown Lab building is still on North Campus but has been expanded and modernized through several renovations over the years."
   }
