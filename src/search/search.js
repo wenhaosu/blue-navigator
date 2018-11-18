@@ -3,6 +3,7 @@ import './search.css';
 import * as qs from 'query-string';
 import IntroPage from "./intro-page";
 import {WindowContext} from '../App';
+import { Scroller, Section } from "react-fully-scrolled";
 
 class Search extends Component {
     constructor(props) {
@@ -33,13 +34,25 @@ class Search extends Component {
 
     render() {
         return (
-            <WindowContext.Consumer>
-                {({windowWidth, windowHeight}) => (
-                    <div className="search">
-                        <IntroPage building={this.state.building} windowWidth={windowWidth}
-                                   windowHeight={windowHeight}/>
-                    </div>)}
-            </WindowContext.Consumer>
+            <Scroller
+                curPage={1}
+                onBeforeScroll={(from, to) => {}}
+                onAfterScroll={page => {}}
+                isEnabled={true}
+            >
+                <Section>
+                    <WindowContext.Consumer>
+                        {({windowWidth, windowHeight}) => (
+                            <div className="search">
+                                <IntroPage building={this.state.building} windowWidth={windowWidth}
+                                           windowHeight={windowHeight}/>
+                            </div>)}
+                    </WindowContext.Consumer>
+                </Section>
+                <Section>Page2</Section>
+                <Section>Page3</Section>
+                <Section>Page4</Section>
+            </Scroller>
         );
     }
 }
