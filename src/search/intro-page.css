@@ -1,0 +1,31 @@
+.intro-page {
+    background-color: #fafafa;
+    height:100vh;
+}
+
+.intro-page > div {
+    display: inline-block;
+}
+
+.intro-page .image {
+    position: relative;
+    width: 40%;
+    height: 100%;
+}
+
+.intro-page .image > img {
+    position: absolute;
+    max-width: 80%;
+    max-height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro-page .intro {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    top: 35%;
+}

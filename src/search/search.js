@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
 import './search.css';
 import * as qs from 'query-string';
-import request from 'request';
-import {API_ENDPOINT} from '../common';
+import IntroPage from "./intro-page";
+import {WindowContext} from '../App';
+import Slides from "../home/slides";
+import Pitch from "../home/pitch";
+import Footer from "../components/footer";
 
 class Search extends Component {
     constructor(props) {
         super(props);
+        let query = Search.getQueryFromProps(props).split(' ');
         this.state = {
-            query: Search.getQueryFromProps(props),
-            items: {art: [], artizen: []}
+            building: query[0],
+            room: query[1]
         };
     }
 
@@ -32,15 +36,15 @@ class Search extends Component {
 
     render() {
         return (
-            <div className="search">
-
-            </div>
+            <WindowContext.Consumer>
+                {({windowWidth, windowHeight}) => (
+                    <div className="search">
+                        <IntroPage building={this.state.building} windowWidth={windowWidth}
+                                   windowHeight={windowHeight}/>
+                    </div>)}
+            </WindowContext.Consumer>
         );
     }
 }
-
-// Search.propTypes = {
-//     location: PropTypes.object,
-// };
 
 export default Search;
