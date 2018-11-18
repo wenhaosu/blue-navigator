@@ -3,6 +3,23 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {withRouter} from 'react-router-dom';
 import './searchbox.css';
+import Select from "react-styled-select";
+
+const buildingOptions = [
+    { value: 'bbb', label: 'Bob and Betty Beyster Building' },
+    { value: 'ggbrown', label: 'G.G.Brown' },
+    { value: 'masonhall', label: 'Mason Hall' },
+    { value: 'eecs', label: 'EECS Building' },
+    { value: 'duder', label: 'Duderstadt Center' }
+];
+
+const roomOptions = [
+    { value: '1670', label: '1670' },
+    { value: '1690', label: '1690' },
+    { value: '2870', label: '2870' },
+    { value: '3777', label: '3777' },
+    { value: '4773', label: '4773' }
+];
 
 class Searchbox extends Component {
     constructor(props) {
@@ -25,12 +42,11 @@ class Searchbox extends Component {
                     e.preventDefault();
                     history.push(`/search?q=${encodeURIComponent(this.state.value)}`);
                 }}>
-                    <div className="searchbox">
-                        <input name="q" type="text" value={this.state.value} onChange={this.handleChange}/>
-                        <div className="icon">
-                            <FontAwesomeIcon icon={faSearch} size="lg"/>
-                        </div>
-                    </div>
+                    {/*<div className="searchbox">*/}
+                        <Select className="dark-theme" options={buildingOptions}
+                                value={this.state.value} onChange={this.handleChange}/>
+                        {/*<Select options={roomOptions}/>*/}
+                    {/*</div>*/}
                 </form>
             </div>
         );
