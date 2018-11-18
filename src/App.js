@@ -5,8 +5,9 @@ import {
     Switch
 } from 'react-router-dom';
 import Navbar from './components/navbar';
-import Home from './home/home';
 import NavbarMobile from './components/navbar-mobile';
+import Home from './home/home';
+import Search from './search/search';
 import './App.css';
 
 export const WindowContext = React.createContext();
@@ -66,6 +67,7 @@ class App extends Component {
                 <Router>
                     <div>
                         <Route exact path="/" component={Home}/>
+                        <Route exact path="/search" component={Search}/>
                         <Switch>
                             <Route
                                 exact
