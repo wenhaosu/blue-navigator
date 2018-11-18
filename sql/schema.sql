@@ -1,0 +1,16 @@
+CREATE TABLE buildings(
+  b_id INTEGER PRIMARY KEY,
+  bname VARCHAR(50) NOT NULL,
+  abbr VARCHAR(50)
+);
+
+CREATE TABLE locations(
+  l_id INTEGER PRIMARY KEY,
+  b_id INTEGER NOT NULL,
+  lname VARCHAR(200) NOT NULL,
+  x_loc INTEGER NOT NULL,
+  y_loc INTEGER NOT NULL,
+  floor_num INTEGER NOT NULL,
+  ltype INTEGER NOT NULL,
+  FOREIGN KEY(b_id) REFERENCE buildings(b_id) ON DELETE CASCADE
+);
