@@ -23,8 +23,13 @@ class Footer extends Component {
                                 </td>}
                                 <td width={Footer.isWideScreen(windowWidth) ? '45%' : '80%'}>
                                     <div className="contact-info">
-                                        Email: <br/><a href="mailto:service@auramaze.org">service@auramaze.org</a><br/>Address:
-                                        <br/>1760 Broadway St.<br/>Ann Arbor, MI 48105
+                                        Course:
+                                        <br/>EECS 493<br/>
+                                        <br/>Our Team Members:<br/>
+                                        <a href="mailto:suwenhao@umich.edu">Wenhao Su</a>
+                                        <a href="mailto:nancywn@umich.edu">Nan Wang</a>
+                                        <a href="mailto:zhhan@umich.edu">Zhuang Han</a><br/>
+
                                     </div>
                                 </td>
                                 {Footer.isWideScreen(windowWidth) &&
