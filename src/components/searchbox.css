@@ -39,12 +39,12 @@
 }
 
 .dark-theme {
-    --styled-select-placeholder__color: #666666;
+    --styled-select-placeholder__color: white;
     --styled-select__color: white;
     --styled-select__background-color: rgba(66,66,66,0.5);
     --styled-select__border-radius: 5px;
 
-    --styled-select-menu-outer__margin: 10px 0 0 0;
+    --styled-select-menu-outer__margin: 0;
     --styled-select-menu-outer__padding: 0;
     --styled-select-menu-outer__background-color: rgba(66,66,66,0.5);
 
@@ -55,4 +55,28 @@
 
     --styled-select-option__color--selected: #eee;
     --styled-select-option__background-color--selected: rgba(66,66,66,0.5);
+}
+
+.search-building {
+    position: relative;
+    width: 50%;
+    height: 50px;
+    float: left;
+}
+
+.search-room {
+    position: relative;
+    width: 40%;
+    height: 50px;
+    float: left;
+    padding-left: 1%;
+}
+
+.search {
+    position: relative;
+    width: 8%;
+    height: 38px;
+    float: left;
+    color: white;
+    padding-left: 1%;
 }
