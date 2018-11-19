@@ -1,0 +1,37 @@
+.entrance-page {
+    background-color: white;
+    height:60vh;
+    width: 100%;
+}
+
+.entrance-page > div {
+    display: inline-block;
+}
+
+.in-building {
+    background-color: white;
+    height:10vh;
+    width: 96%;
+}
+
+.in-building-box {
+    box-shadow: 0 0 10px 5px #cdcdcd;
+    height: 10vh;
+    width: 100%;
+    margin-left: 2%;
+}
+
+.in-building-box .in-building-box-title {
+    width: 40%;
+    text-align: center;
+    padding-top: 4vh;
+    font-family: 'CenturyGothic', serif;
+    float: left;
+}
+
+.in-building-box .in-building-box-search {
+    width: 50%;
+    text-align: center;
+    padding-top: 3vh;
+    float: left;
+}

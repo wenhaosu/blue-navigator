@@ -1,0 +1,16 @@
+{
+  "bbb": {
+    "diag": {
+      "name": "Front Door",
+      "img": "https://s3.amazonaws.com/eecs493/blue-navigator/entrance/diag-entrance.jpg"
+    },
+    "dow": {
+      "name": "Dow Building",
+      "img": "https://s3.amazonaws.com/eecs493/blue-navigator/entrance/dow-entrance.jpg"
+    },
+    "hayward": {
+      "name": "Hayward St.",
+      "img": "https://s3.amazonaws.com/eecs493/blue-navigator/entrance/hayward-entrance.jpg"
+    }
+  }
+}

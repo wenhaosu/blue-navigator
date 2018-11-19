@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './search.css';
 import * as qs from 'query-string';
 import IntroPage from "./intro-page";
+import EntrancePage from "./entrance-page";
 import {WindowContext} from '../App';
 import { Scroller, Section } from "react-fully-scrolled";
 
@@ -50,7 +51,15 @@ class Search extends Component {
                     </WindowContext.Consumer>
                 </Section>
                 <Section>Page2</Section>
-                <Section>Page3</Section>
+                <Section>
+                    <WindowContext.Consumer>
+                        {({windowWidth, windowHeight}) => (
+                            <div className="search">
+                                <EntrancePage building={this.state.building} windowWidth={windowWidth}
+                                           windowHeight={windowHeight}/>
+                            </div>)}
+                    </WindowContext.Consumer>
+                </Section>
                 <Section>Page4</Section>
             </Scroller>
         );
