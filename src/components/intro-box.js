@@ -6,18 +6,23 @@ class IntroBox extends Component {
 
     render() {
         return (
-            <div className="intro-box">
-                <div className="left">
-                    <div className="image">
-                        <img src={this.props.url} alt="building"/>
-                    </div>
-                    <div className="building-title">
-                        {this.props.name}
-                    </div>
+            <div>
+                <div className="pageTitle">
+                    Building Information
                 </div>
-                <div className="right">
-                    <div className="doc">
-                        {this.props.intro}
+                <div className="intro-box">
+                    <div className="left">
+                        <div className="image">
+                            <img src={this.props.url} alt="building"/>
+                        </div>
+                        <div className="building-title">
+                            {this.props.name}
+                        </div>
+                    </div>
+                    <div className="right">
+                        <div className="doc">
+                            {this.props.intro}
+                        </div>
                     </div>
                 </div>
             </div>

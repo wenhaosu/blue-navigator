@@ -1,46 +1,67 @@
-.intro-box {
-    box-shadow: 0 0 10px 5px #cdcdcd;
-    height: 60vh;
+.pageTitle {
+    font-family: 'CenturyGothic', serif;
     position: absolute;
-    top: 20vh;
+    top: 5vh;
     left: 5vw;
     right: 5vw;
+    font-size: 5vh;
+}
+
+
+.intro-box {
+    box-shadow: 0 0 10px 5px #cdcdcd;
+    position: absolute;
+    top: 15vh;
+    left: 5vw;
+    right: 5vw;
+    overflow: hidden;
 }
 
 .intro-box .left {
     position: relative;
     width: 40%;
-    height: 60vh;
-    background-color: red;
-    overflow: hidden;
+    /*background-color: red;*/
     display: inline-block;
+    text-align: center;
 }
 
 .intro-box .right {
     position: relative;
     width: 60%;
-    height: 60vh;
     /*background-color: blue;*/
-    overflow: hidden;
     display: inline-block;
 }
 
 .intro-box .image {
     position: relative;
+    display: inline-block;
     width: auto;
-    height: 60vh;
+    padding: 20px;
+    overflow: hidden;
 }
 
 .intro-box .image > img {
-    width: 100%;
+    width: 80%;
 }
 
 .intro-box .building-title {
     font-family: 'CenturyGothic', serif;
+    /*text-align: center;*/
+    /*align-items: center;*/
+    color: #666666;
+    padding: 20px;
+    margin: 0 20px 20px 20px;
+    font-size: 30px;
+    border: 0 solid #666666;
+    border-top-width: 1px;
 }
 
 .intro-box .doc {
     font-family: 'SegoeUI', serif;
     padding: 20px;
     color: #666666;
+    border: 0 solid #666666;
+    margin: 20px 20px 20px 0;
+    border-left-width: 1px;
+    overflow: hidden;
 }
