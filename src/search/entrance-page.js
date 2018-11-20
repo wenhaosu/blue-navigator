@@ -19,19 +19,18 @@ const roomOptions = [
 class EntrancePage extends Component {
     constructor(props) {
         super(props);
-        this.state = {entrances: undefined, roomValue: '', colorMat: [0, 0, 0]};
+        this.state = {entrances: undefined, roomValue: '', colorMat: [0, 0, 0, 0]};
         this.handleRoomChange = this.handleRoomChange.bind(this);
         this.setActiveColor = this.setActiveColor.bind(this);
     }
 
     handleRoomChange(value) {
-        this.setState({roomValue: value});
+        this.setState({roomValue: value, colorMat: [0, 0, 0, 1]});
+        this.props.setFunc(value);
     }
 
     componentDidMount() {
         this.setState({
-            // url: entranceInfo[this.props.building] ? entranceInfo[this.props.building].img : "",
-            // name: entranceInfo[this.props.building] ? entranceInfo[this.props.building].name : "",
             entrances: Object.keys(entranceInfo[this.props.building]).forEach((key, item) => {
                 console.log(typeof key);
                 console.log(entranceInfo[this.props.building][key]);
@@ -42,7 +41,7 @@ class EntrancePage extends Component {
     }
 
     setActiveColor(index) {
-        let mat = [0, 0, 0];
+        let mat = [0, 0, 0, 0];
         mat[index] = 1;
         this.setState({
             colorMat: mat
@@ -84,13 +83,14 @@ class EntrancePage extends Component {
                     </div>
                 </div>
                 <div className="in-building">
-                    <div className="in-building-box">
+                    <div className="in-building-box"
+                         style={{boxShadow: `0 0 10px 5px ${this.state.colorMat[3] === 1 ? "#6293cd" : "#cdcdcd"}`}}>
                         <div className="in-building-box-title">
                             Already in this building?
                         </div>
                         <Select className="in-building-box-search" options={roomOptions}
                                 placeholder="Select Your Current Nearest Room" value={this.state.roomValue}
-                                onChange={this.handleRoomChange}/>
+                                onChange={this.handleRoomChange} />
                     </div>
                 </div>
             </div>
