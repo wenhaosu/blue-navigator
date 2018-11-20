@@ -12,6 +12,8 @@
     background-color: white;
     height:10vh;
     width: 96%;
+    position: relative;
+    top: 20vh;
 }
 
 .in-building-box {
@@ -19,17 +21,23 @@
     height: 10vh;
     width: 100%;
     margin-left: 2%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .in-building-box .in-building-box-title {
+    position: relative;
     width: 40%;
     text-align: center;
-    padding-top: 4vh;
+    padding-top: 3vh;
     font-family: 'CenturyGothic', serif;
+    font-size: 20px;
     float: left;
 }
 
 .in-building-box .in-building-box-search {
+    position: relative;
     width: 50%;
     text-align: center;
     padding-top: 3vh;

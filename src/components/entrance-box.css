@@ -2,7 +2,7 @@
     box-shadow: 0 0 10px 5px #cdcdcd;
     height: 50vh;
     position: relative;
-    top: 7vh;
+    top: 25vh;
     float:left;
     width: 30%;
     margin-left: 2%;
@@ -19,16 +19,18 @@
     position: absolute;
     max-width: 100%;
     max-height: 100%;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
 }
 
 .entrance-box .entrance-title {
+    position: relative;
     padding-top: 5%;
     width: 100%;
     text-align: center;
     font-family: 'CenturyGothic', serif;
+    font-size: 20px;
 }
 
 .entrance-box .button {

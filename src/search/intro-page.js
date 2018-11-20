@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './intro-page.css';
+import '../common.css';
 import PropTypes from 'prop-types';
 import buildingInfo from '../static/building-intro-info';
 import IntroBox from "../components/intro-box";
@@ -21,14 +22,9 @@ class IntroPage extends Component {
     render() {
         return (
             <div className="intro-page">
-                {/*<div className="image">*/}
-                    {/*{this.state.url ? <img src={this.state.url} alt="building"/> :*/}
-                        {/*<img src={"https://s3.amazonaws.com/eecs493/blue-navigator/noimage.jpg"} alt="building"/>}*/}
-
-                {/*</div>*/}
-                {/*<div className="intro">*/}
-                    {/*{this.state.intro ? this.state.intro : "No intro available."}*/}
-                {/*</div>*/}
+                <div className="page-title">
+                    Building Information
+                </div>
                 <IntroBox url={this.state.url} intro={this.state.intro} name={this.state.name}/>
             </div>
         );

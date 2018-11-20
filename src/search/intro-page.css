@@ -1,9 +1,9 @@
 .intro-page {
     background-color: white;
     height:100vh;
+    width: 90%;
 }
 
 .intro-page > div {
     display: inline-block;
 }
-

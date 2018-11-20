@@ -7,9 +7,6 @@ class IntroBox extends Component {
     render() {
         return (
             <div>
-                <div className="pageTitle">
-                    Building Information
-                </div>
                 <div className="intro-box">
                     <div className="left">
                         <div className="image">

@@ -1,25 +1,12 @@
-.pageTitle {
-    font-family: 'CenturyGothic', serif;
-    position: absolute;
-    top: 5vh;
-    left: 5vw;
-    right: 5vw;
-    font-size: 5vh;
-}
-
-
 .intro-box {
     box-shadow: 0 0 10px 5px #cdcdcd;
     position: absolute;
-    top: 15vh;
+    top: 25vh;
     left: 5vw;
     right: 5vw;
     overflow: hidden;
     max-height: 60vh;
     overflow-y: auto;
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
     text-align: center;
 }
 

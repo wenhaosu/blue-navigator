@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './entrance-page.css';
-
+import '../common.css';
 import PropTypes from 'prop-types';
 import entranceInfo from '../static/entrance-info';
 import EntranceBox from "../components/entrance-box";
@@ -44,15 +44,9 @@ class EntrancePage extends Component {
         return (
             <div>
                 <div className="entrance-page">
-                    {/*<div className="image">*/}
-                    {/*{this.state.url ? <img src={this.state.url} alt="building"/> :*/}
-                    {/*<img src={"https://s3.amazonaws.com/eecs493/blue-navigator/noimage.jpg"} alt="building"/>}*/}
-
-                    {/*</div>*/}
-                    {/*<div className="intro">*/}
-                    {/*{this.state.intro ? this.state.intro : "No intro available."}*/}
-                    {/*</div>*/}
-                    {/*<EntranceBox url={this.state.url} name={this.state.name}/>*/}
+                    <div className="page-title">
+                        Select your Entrance
+                    </div>
                     <EntranceBox url={entranceInfo[this.props.building]["diag"]["img"]}
                                  name={entranceInfo[this.props.building]["diag"]["name"]}/>
                     <EntranceBox url={entranceInfo[this.props.building]["dow"]["img"]}

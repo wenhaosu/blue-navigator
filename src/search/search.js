@@ -6,6 +6,10 @@ import EntrancePage from "./entrance-page";
 import {WindowContext} from '../App';
 import { Scroller, Section } from "react-fully-scrolled";
 
+document.ontouchmove = function(ev) {
+    ev.preventDefault();
+};
+
 class Search extends Component {
     constructor(props) {
         super(props);
@@ -21,16 +25,8 @@ class Search extends Component {
     }
 
     componentDidMount() {
-        // request.get({
-        //     url: `${API_ENDPOINT}/search?q=${encodeURIComponent(this.state.query)}`,
-        //     json: true
-        // }, (error, response, items) => {
-        //     if (response && response.statusCode === 200) {
-        //         this.setState({
-        //             items: items
-        //         });
-        //     }
-        // });
+        console.log(this.state.building);
+        console.log(this.state.room);
     }
 
     render() {
@@ -42,25 +38,17 @@ class Search extends Component {
                 isEnabled={true}
             >
                 <Section>
-                    <WindowContext.Consumer>
-                        {({windowWidth, windowHeight}) => (
-                            <div className="search">
-                                <IntroPage building={this.state.building} windowWidth={windowWidth}
-                                           windowHeight={windowHeight}/>
-                            </div>)}
-                    </WindowContext.Consumer>
+                    <IntroPage building={this.state.building} />
                 </Section>
-                <Section>Page2</Section>
                 <Section>
-                    <WindowContext.Consumer>
-                        {({windowWidth, windowHeight}) => (
-                            <div className="search">
-                                <EntrancePage building={this.state.building} windowWidth={windowWidth}
-                                           windowHeight={windowHeight}/>
-                            </div>)}
-                    </WindowContext.Consumer>
+                    <IntroPage building={this.state.building} />
                 </Section>
-                <Section>Page4</Section>
+                <Section>
+                    <EntrancePage building={this.state.building} />
+                </Section>
+                <Section>
+                    <EntrancePage building={this.state.building} />
+                </Section>
             </Scroller>
         );
     }

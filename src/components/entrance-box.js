@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './entrance-box.css';
+import {Button} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 class EntranceBox extends Component {
@@ -14,7 +15,7 @@ class EntranceBox extends Component {
                     {this.props.name}
                 </div>
                 <div className="button">
-                    <button>Choose This Entrance</button>
+                    <Button>I'm Here!</Button>
                 </div>
             </div>
         );
