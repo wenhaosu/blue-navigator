@@ -137,13 +137,15 @@ def insert_data(conn, file_name1, file_name2):
         dr2 = csv.DictReader(fin2) # comma is default delimiter
 
         jsonfile2.write('{\n')
-        jsonfile2.write('  \"rooms\": [\n')
+        # jsonfile2.write('  \"rooms\": [\n')
+        reader = csv.reader(fin2)
         for row in dr2:
-            jsonfile2.write('    ')
+            jsonfile2.write('  ')
+            jsonfile2.write('\"' + row['lname'] + '\": ')
             json.dump(row, jsonfile2)
             jsonfile2.write(',\n')
 
-        jsonfile2.write('  ]\n')
+        # jsonfile2.write('  ]\n')
         jsonfile2.write('}')
     
     conn.commit()
