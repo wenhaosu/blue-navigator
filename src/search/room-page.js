@@ -43,7 +43,6 @@ class RoomPage extends Component {
         });
     };
 
-
     componentDidMount() {
         this.setState({
             url: buildingInfo[this.props.building] ? buildingInfo[this.props.building].img : "",
@@ -71,10 +70,12 @@ class RoomPage extends Component {
                     </Tabs>
                     <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex}>
                         <div style={Object.assign({}, styles.slide, styles.slide1)}>
-                            <img className="room-image" src="https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_1.png" />
+                            <img className="room-image" src={`https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_${this.props.curFloor}.png`} />
+                            <img style={{position: "relative"}} src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/start.png" />
+                            <img src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/goal.png" />
                         </div>
                         <div style={Object.assign({}, styles.slide, styles.slide2)}>
-                            <img className="room-image" src="https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_2.png" />
+                            <img className="room-image" src={`https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_${this.props.destFloor}.png`} />
                         </div>
                     </SwipeableViews>
                 </div>
@@ -84,7 +85,10 @@ class RoomPage extends Component {
 }
 
 RoomPage.propTypes = {
-    building: PropTypes.string,
+    curFloor: PropTypes.number,
+    destFloor: PropTypes.number,
+    curRoom: PropTypes.string,
+    destRoom: PropTypes.string
 };
 
 export default RoomPage;

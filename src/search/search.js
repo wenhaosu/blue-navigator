@@ -57,7 +57,8 @@ class Search extends Component {
                     <EntrancePage building={this.state.building} setFunc={this.setStartPoint}/>
                 </Section>
                 <Section>
-                    <RoomPage building={this.state.building} />
+                    <RoomPage building={this.state.building}
+                              curFloor={1} destFloor={3} curRoom={"diag"} destRoom={"3777"}/>
                 </Section>
             </Scroller>
         );
