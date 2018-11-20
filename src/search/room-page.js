@@ -6,6 +6,7 @@ import buildingInfo from '../static/building-intro-info';
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import SwipeableViews from "react-swipeable-views";
+import roomInfo from '../static/locations';
 
 const styles = {
     tabs: {
@@ -71,7 +72,8 @@ class RoomPage extends Component {
                     <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex}>
                         <div style={Object.assign({}, styles.slide, styles.slide1)}>
                             <img className="room-image" src={`https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_${this.props.curFloor}.png`} />
-                            <img style={{position: "relative"}} src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/start.png" />
+                            <img style={{position: "relative", left: `${roomInfo[this.props.curRoom].xloc/1440}`, top: `${roomInfo[this.props.curRoom].yloc/1080}`}}
+                                 src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/start.png" />
                             <img src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/goal.png" />
                         </div>
                         <div style={Object.assign({}, styles.slide, styles.slide2)}>
@@ -83,7 +85,6 @@ class RoomPage extends Component {
         );
     }
 }
-
 RoomPage.propTypes = {
     curFloor: PropTypes.number,
     destFloor: PropTypes.number,
