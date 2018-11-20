@@ -29,7 +29,6 @@ class RoomPage extends Component {
                     <MapWithAMarker origin="The Courtyards Student Apartments, Ann Arbor, MI"
                                     destination="Bob and Betty Beyster Building, Ann Arbor, MI"/>
                 </div>
-                {/*<NavBox url={this.state.url} intro={this.state.intro} name={this.state.name}/>*/}
             </div>
         );
     }

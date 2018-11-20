@@ -21,19 +21,22 @@ class NavPage extends Component {
     }
 
     render() {
-        return (
-            <div className="nav-page">
-                <div className="page-title">
-                    Navigation to Building
-                </div>
-                <div className="nav-box">
-                    <MapWithADirectionsRenderer originLat={this.props.coords.latitude}
-                                                originLong={this.props.coords.longitude}
-                                                destination="Bob and Betty Beyster Building, Ann Arbor, MI"/>
-                </div>
-                {/*<NavBox url={this.state.url} intro={this.state.intro} name={this.state.name}/>*/}
-            </div>
-        );
+        return !this.props.isGeolocationAvailable
+            ? <div>Your browser does not support Geolocation</div>
+            : !this.props.isGeolocationEnabled
+                ? <div>Geolocation is not enabled</div>
+                : this.props.coords
+                    ? <div className="nav-page">
+                        <div className="page-title">
+                            Navigation to Building
+                        </div>
+                        <div className="nav-box">
+                            <MapWithADirectionsRenderer originLat={this.props.coords.latitude}
+                                                        originLong={this.props.coords.longitude}
+                                                        destination="Bob and Betty Beyster Building, Ann Arbor, MI"/>
+                        </div>
+                    </div>
+                    : <div>Getting the location data&hellip; </div>;
     }
 }
 
