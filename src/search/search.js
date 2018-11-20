@@ -3,8 +3,9 @@ import './search.css';
 import * as qs from 'query-string';
 import IntroPage from "./intro-page";
 import EntrancePage from "./entrance-page";
-import {WindowContext} from '../App';
 import { Scroller, Section } from "react-fully-scrolled";
+import NavPage from "./nav-page";
+import RoomPage from "./room-page";
 
 document.ontouchmove = function(ev) {
     ev.preventDefault();
@@ -16,8 +17,10 @@ class Search extends Component {
         let query = Search.getQueryFromProps(props).split(' ');
         this.state = {
             building: query[0],
-            room: query[1]
+            room: query[1],
+            start: ""
         };
+        this.setStartPoint = this.setStartPoint.bind(this);
     }
 
     static getQueryFromProps(props) {
@@ -27,6 +30,13 @@ class Search extends Component {
     componentDidMount() {
         console.log(this.state.building);
         console.log(this.state.room);
+    }
+
+    setStartPoint(point){
+        this.setState({
+            start: point
+        });
+        console.log(this.state.start)
     }
 
     render() {
@@ -41,13 +51,13 @@ class Search extends Component {
                     <IntroPage building={this.state.building} />
                 </Section>
                 <Section>
-                    <IntroPage building={this.state.building} />
+                    <NavPage building={this.state.building} />
                 </Section>
                 <Section>
-                    <EntrancePage building={this.state.building} />
+                    <EntrancePage building={this.state.building} setFunc={this.setStartPoint}/>
                 </Section>
                 <Section>
-                    <EntrancePage building={this.state.building} />
+                    <RoomPage building={this.state.building} />
                 </Section>
             </Scroller>
         );

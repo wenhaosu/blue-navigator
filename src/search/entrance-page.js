@@ -18,8 +18,9 @@ const roomOptions = [
 class EntrancePage extends Component {
     constructor(props) {
         super(props);
-        this.state = {entrances: undefined, roomValue: ''};
+        this.state = {entrances: undefined, roomValue: '', colorMat: [0, 0, 0]};
         this.handleRoomChange = this.handleRoomChange.bind(this);
+        this.setActiveColor = this.setActiveColor.bind(this);
     }
 
     handleRoomChange(value) {
@@ -39,6 +40,14 @@ class EntrancePage extends Component {
         });
     }
 
+    setActiveColor(index) {
+        let mat = [0, 0, 0];
+        mat[index] = 1;
+        this.setState({
+            colorMat: mat
+        });
+    }
+
     render() {
         console.log(this.state.entrances);
         return (
@@ -48,11 +57,20 @@ class EntrancePage extends Component {
                         Select your Entrance
                     </div>
                     <EntranceBox url={entranceInfo[this.props.building]["diag"]["img"]}
-                                 name={entranceInfo[this.props.building]["diag"]["name"]}/>
+                                 name={entranceInfo[this.props.building]["diag"]["name"]}
+                                 color={this.state.colorMat[0] === 1 ? "#6293cd" : "#cdcdcd"}
+                                 setColor={this.setActiveColor} numIndex={0}
+                                 setFunc={this.props.setFunc} id="diag"/>
                     <EntranceBox url={entranceInfo[this.props.building]["dow"]["img"]}
-                                 name={entranceInfo[this.props.building]["dow"]["name"]}/>
+                                 name={entranceInfo[this.props.building]["dow"]["name"]}
+                                 color={this.state.colorMat[1] === 1 ? "#6293cd" : "#cdcdcd"}
+                                 setColor={this.setActiveColor} numIndex={1}
+                                 setFunc={this.props.setFunc} id="dow"/>
                     <EntranceBox url={entranceInfo[this.props.building]["hayward"]["img"]}
-                                 name={entranceInfo[this.props.building]["hayward"]["name"]}/>
+                                 name={entranceInfo[this.props.building]["hayward"]["name"]}
+                                 color={this.state.colorMat[2] === 1 ? "#6293cd" : "#cdcdcd"}
+                                 setColor={this.setActiveColor} numIndex={2}
+                                 setFunc={this.props.setFunc} id="hayward"/>
                 </div>
                 <div className="in-building">
                     <div className="in-building-box">
