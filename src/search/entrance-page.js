@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import entranceInfo from '../static/entrance-info';
 import EntranceBox from "../components/entrance-box";
 import Select from "react-styled-select";
+import {Scrollbars} from 'react-custom-scrollbars';
 
 
 const roomOptions = [
@@ -56,21 +57,31 @@ class EntrancePage extends Component {
                     <div className="page-title">
                         Select your Entrance
                     </div>
-                    <EntranceBox url={entranceInfo[this.props.building]["diag"]["img"]}
-                                 name={entranceInfo[this.props.building]["diag"]["name"]}
-                                 color={this.state.colorMat[0] === 1 ? "#6293cd" : "#cdcdcd"}
-                                 setColor={this.setActiveColor} numIndex={0}
-                                 setFunc={this.props.setFunc} id="diag"/>
-                    <EntranceBox url={entranceInfo[this.props.building]["dow"]["img"]}
-                                 name={entranceInfo[this.props.building]["dow"]["name"]}
-                                 color={this.state.colorMat[1] === 1 ? "#6293cd" : "#cdcdcd"}
-                                 setColor={this.setActiveColor} numIndex={1}
-                                 setFunc={this.props.setFunc} id="dow"/>
-                    <EntranceBox url={entranceInfo[this.props.building]["hayward"]["img"]}
-                                 name={entranceInfo[this.props.building]["hayward"]["name"]}
-                                 color={this.state.colorMat[2] === 1 ? "#6293cd" : "#cdcdcd"}
-                                 setColor={this.setActiveColor} numIndex={2}
-                                 setFunc={this.props.setFunc} id="hayward"/>
+                    <div style={{marginTop: '25vh', width: '100%', padding: '0 2%', boxSizing: 'border-box'}}>
+                        <Scrollbars style={{height: '50vh', width: '100%', whiteSpace: 'nowrap'}}>
+                            <div className="entrance-box-container">
+                                <EntranceBox url={entranceInfo[this.props.building]["diag"]["img"]}
+                                             name={entranceInfo[this.props.building]["diag"]["name"]}
+                                             color={this.state.colorMat[0] === 1 ? "#6293cd" : "#cdcdcd"}
+                                             setColor={this.setActiveColor} numIndex={0}
+                                             setFunc={this.props.setFunc} id="diag"/>
+                            </div>
+                            <div className="entrance-box-container">
+                                <EntranceBox url={entranceInfo[this.props.building]["dow"]["img"]}
+                                             name={entranceInfo[this.props.building]["dow"]["name"]}
+                                             color={this.state.colorMat[1] === 1 ? "#6293cd" : "#cdcdcd"}
+                                             setColor={this.setActiveColor} numIndex={1}
+                                             setFunc={this.props.setFunc} id="dow"/>
+                            </div>
+                            <div className="entrance-box-container">
+                                <EntranceBox url={entranceInfo[this.props.building]["hayward"]["img"]}
+                                             name={entranceInfo[this.props.building]["hayward"]["name"]}
+                                             color={this.state.colorMat[2] === 1 ? "#6293cd" : "#cdcdcd"}
+                                             setColor={this.setActiveColor} numIndex={2}
+                                             setFunc={this.props.setFunc} id="hayward"/>
+                            </div>
+                        </Scrollbars>
+                    </div>
                 </div>
                 <div className="in-building">
                     <div className="in-building-box">

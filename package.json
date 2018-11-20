@@ -10,6 +10,7 @@
     "query-string": "^5.1.1",
     "react": "^16.6.0",
     "react-bootstrap": "^0.32.4",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.6.0",
     "react-fully-scrolled": "^1.0.4",
     "react-geolocated": "^2.4.0",
