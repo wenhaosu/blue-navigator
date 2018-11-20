@@ -12,6 +12,7 @@
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.0",
     "react-fully-scrolled": "^1.0.4",
+    "react-geolocated": "^2.4.0",
     "react-google-maps": "^9.4.5",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^4.3.1",

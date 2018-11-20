@@ -3,7 +3,8 @@ import './nav-page.css';
 import '../common.css';
 import PropTypes from 'prop-types';
 import buildingInfo from '../static/building-intro-info';
-import MapWithAMarker from '../components/map-with-direction';
+import MapWithADirectionsRenderer from '../components/map-with-direction';
+import {geolocated} from 'react-geolocated';
 
 class NavPage extends Component {
     constructor(props) {
@@ -26,8 +27,9 @@ class NavPage extends Component {
                     Navigation to Building
                 </div>
                 <div className="nav-box">
-                    <MapWithAMarker origin="The Courtyards Student Apartments, Ann Arbor, MI"
-                                    destination="Bob and Betty Beyster Building, Ann Arbor, MI"/>
+                    <MapWithADirectionsRenderer originLat={this.props.coords.latitude}
+                                                originLong={this.props.coords.longitude}
+                                                destination="Bob and Betty Beyster Building, Ann Arbor, MI"/>
                 </div>
                 {/*<NavBox url={this.state.url} intro={this.state.intro} name={this.state.name}/>*/}
             </div>
@@ -39,4 +41,9 @@ NavPage.propTypes = {
     building: PropTypes.string,
 };
 
-export default NavPage;
+export default geolocated({
+    positionOptions: {
+        enableHighAccuracy: true,
+    },
+    userDecisionTimeout: 5000,
+})(NavPage);
