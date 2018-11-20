@@ -15,21 +15,31 @@
     left: 5vw;
     right: 5vw;
     overflow: hidden;
+    max-height: 60vh;
+    overflow-y: auto;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    text-align: center;
 }
 
 .intro-box .left {
     position: relative;
     width: 40%;
+    min-width: 300px;
     /*background-color: red;*/
     display: inline-block;
+    vertical-align: middle;
     text-align: center;
 }
 
 .intro-box .right {
     position: relative;
     width: 60%;
+    min-width: 300px;
     /*background-color: blue;*/
     display: inline-block;
+    vertical-align: middle;
 }
 
 .intro-box .image {
@@ -60,7 +70,6 @@
     font-family: 'SegoeUI', serif;
     padding: 20px;
     color: #666666;
-    border: 0 solid #666666;
     margin: 20px 20px 20px 0;
     border-left-width: 1px;
     overflow: hidden;
