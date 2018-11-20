@@ -8,6 +8,14 @@
     display: inline-block;
 }
 
+.entrance-box-container {
+    display: inline-block;
+    width: 33%;
+    min-width: 300px;
+    margin: 0 20px 0 20px;
+    padding: 10px;
+}
+
 .in-building {
     background-color: white;
     height:10vh;
@@ -17,7 +25,7 @@
 }
 
 .in-building-box {
-    box-shadow: 0 0 10px 5px #cdcdcd;
+    /*box-shadow: 0 0 10px 5px #cdcdcd;*/
     height: 10vh;
     width: 100%;
     margin-left: 2%;
