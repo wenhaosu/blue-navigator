@@ -36,10 +36,10 @@ class Searchbox extends Component {
         this.setState({buildingValue: value});
         if (value == 'bbb') {
             let options = [];
-            for (var key in rooms["rooms"]) {
+            for (let key in rooms) {
                 let temp = {};
-                temp["value"] = rooms["rooms"][key]["lname"];
-                temp["label"] = rooms["rooms"][key]["lname"];
+                temp["value"] = key;
+                temp["label"] = key;
                 options.push(temp);
             }
             this.setState({roomOptions: options})
