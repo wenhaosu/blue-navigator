@@ -116,3 +116,4 @@ npm start
 * Use React and Bootstrap
 * Use Amazon S3 to store image and font
 * Optimize experience for pad and mobile phone users
+* The BGM in our Demo video is a not a function of our website
