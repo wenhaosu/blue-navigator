@@ -57,6 +57,44 @@ class RoomPage extends Component {
                     <div className="page-title">
                         Navigation Inside Building
                     </div>
+                    <div >
+                        <img style={{
+                                position: 'absolute',
+                                top: '85vh',
+                                left: '5vw',
+                                float: 'left'}}
+                             alt="noImage"
+                             src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/start.png"/>
+                        <div style={{
+                            position: 'absolute',
+                            top: '85vh',
+                            left: '13vw',
+                            width: '15vw',
+                            height: '56px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            float: 'left'}}>
+                            Start Position
+                        </div>
+                        <img style={{
+                            position: 'absolute',
+                            top: '85vh',
+                            left: '30vw',
+                            float: 'left'}}
+                             alt="noImage"
+                             src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/goal.png"/>
+                        <div style={{
+                            position: 'absolute',
+                            top: '85vh',
+                            left: '38vw',
+                            width: '15vw',
+                            height: '56px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            float: 'left'}}>
+                            Target Position
+                        </div>
+                    </div>
                     <div className="room-box">
                         <Tabs
                             value={index}
@@ -167,6 +205,44 @@ class RoomPage extends Component {
                 <div className="room-page">
                     <div className="page-title">
                         Navigation Inside Building
+                    </div>
+                    <div >
+                        <img style={{
+                            position: 'absolute',
+                            top: '85vh',
+                            left: '5vw',
+                            float: 'left'}}
+                             alt="noImage"
+                             src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/start.png"/>
+                        <div style={{
+                            position: 'absolute',
+                            top: '85vh',
+                            left: '13vw',
+                            width: '15vw',
+                            height: '56px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            float: 'left'}}>
+                            Start Position
+                        </div>
+                        <img style={{
+                            position: 'absolute',
+                            top: '85vh',
+                            left: '30vw',
+                            float: 'left'}}
+                             alt="noImage"
+                             src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/goal.png"/>
+                        <div style={{
+                            position: 'absolute',
+                            top: '85vh',
+                            left: '38vw',
+                            width: '15vw',
+                            height: '56px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            float: 'left'}}>
+                            Target Position
+                        </div>
                     </div>
                     <div className="room-box">
                         <Tabs
