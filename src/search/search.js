@@ -64,7 +64,7 @@ class Search extends Component {
                     <WindowContext.Consumer>
                         {({windowWidth, windowHeight}) => (
                             <RoomPage building={this.state.building}
-                                      curFloor={1} destFloor={3} curRoom={"diag"} destRoom={"1670"}
+                                      curFloor={1} destFloor={3} curRoom={"diag"} destRoom={"3777"} curStair={"1-stair1"} destStair={"3-stair1"}
                                       windowWidth={windowWidth}
                                       windowHeight={windowHeight}/>)}
                     </WindowContext.Consumer>
