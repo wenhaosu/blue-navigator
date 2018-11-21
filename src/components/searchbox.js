@@ -14,14 +14,6 @@ const buildingOptions = [
     {value: 'duder', label: 'Duderstadt Center'}
 ];
 
-// const roomOptions = [
-//     {value: '1670', label: '1670'},
-//     {value: '1690', label: '1690'},
-//     {value: '2870', label: '2870'},
-//     {value: '3777', label: '3777'},
-//     {value: '4773', label: '4773'}
-// ];
-
 class Searchbox extends Component {
     constructor(props) {
         super(props);
@@ -34,7 +26,7 @@ class Searchbox extends Component {
 
     handleBuildingChange(value) {
         this.setState({buildingValue: value});
-        if (value == 'bbb') {
+        if (value === 'bbb') {
             let options = [];
             for (let key in rooms) {
                 let temp = {};
@@ -69,7 +61,14 @@ class Searchbox extends Component {
                     onClick={
                         (e) => {
                             e.preventDefault();
-                            history.push(`/search?q=${encodeURIComponent(this.state.buildingValue + " " + this.state.roomValue)}`);
+                            if (this.state.buildingValue !== 'bbb'){
+                                alert("We currently do not support this building!");
+                            }
+                            else if (!this.state.roomValue) {
+                                alert("Please select a room!");
+                            } else {
+                                history.push(`/search?q=${encodeURIComponent(this.state.buildingValue + " " + this.state.roomValue)}`);
+                            }
                         }
                     }/>
             </div>
