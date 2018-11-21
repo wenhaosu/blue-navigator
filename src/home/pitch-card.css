@@ -2,12 +2,12 @@
 
 .pitch-card {
     margin: 50px;
+    padding: 20px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .pitch-card > table {
-    padding: 20px;
     position: relative;
     font-family: 'CenturyGothic', serif;
     color: #666666;

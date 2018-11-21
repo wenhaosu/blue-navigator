@@ -6,7 +6,6 @@ import * as Scroll from 'react-scroll';
 import logo from '../static/logo-white-frame.svg';
 import './navbar-mobile.css';
 import {WindowContext} from '../App';
-import {lockBody, unlockBody} from '../utils';
 
 const scroll = Scroll.animateScroll;
 
@@ -20,7 +19,7 @@ class NavbarMobile extends Component {
     }
 
     hideNavbarMobile() {
-        unlockBody();
+        document.body.style.overflow = 'visible';
         this.setState({expand: false});
     }
 
@@ -64,9 +63,9 @@ class NavbarMobile extends Component {
                         <div className={`nav-toggle ${this.state.expand && 'nav-toggle-cancel'}`}
                              onClick={() => {
                                  if (this.state.expand) {
-                                     unlockBody();
+                                     document.body.style.overflow = 'visible';
                                  } else {
-                                     lockBody();
+                                     document.body.style.overflow = 'hidden';
                                  }
                                  this.setState({expand: !this.state.expand});
                              }}>
