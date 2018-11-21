@@ -7,7 +7,7 @@ import {Scroller, Section} from "react-fully-scrolled";
 import NavPage from "./nav-page";
 import RoomPage from "./room-page";
 import {WindowContext} from "../App";
-import Slide from "../home/slide";
+import rooms from "../static/locations"
 
 document.ontouchmove = function (ev) {
     ev.preventDefault();
@@ -20,7 +20,7 @@ class Search extends Component {
         this.state = {
             building: query[0],
             room: query[1],
-            start: ""
+            start: "diag"
         };
         this.setStartPoint = this.setStartPoint.bind(this);
     }
@@ -64,7 +64,12 @@ class Search extends Component {
                     <WindowContext.Consumer>
                         {({windowWidth, windowHeight}) => (
                             <RoomPage building={this.state.building}
-                                      curFloor={1} destFloor={3} curRoom={"diag"} destRoom={"3777"} curStair={"1-stair1"} destStair={"3-stair1"}
+                                      curFloor={parseInt(rooms[this.state.start]["floor_num"])}
+                                      destFloor={parseInt(rooms[this.state.room]["floor_num"])}
+                                      curRoom={this.state.start}
+                                      destRoom={this.state.room}
+                                      curStair={rooms[this.state.start]["floor_num"] + "-stair1"}
+                                      destStair={rooms[this.state.room]["floor_num"] + "-stair1"}
                                       windowWidth={windowWidth}
                                       windowHeight={windowHeight}/>)}
                     </WindowContext.Consumer>

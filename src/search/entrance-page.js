@@ -10,14 +10,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons';
 import rooms from "../static/locations";
 
-// const roomOptions = [
-//     {value: '1670', label: '1670'},
-//     {value: '1690', label: '1690'},
-//     {value: '2870', label: '2870'},
-//     {value: '3777', label: '3777'},
-//     {value: '4773', label: '4773'}
-// ];
-
 class EntrancePage extends Component {
     constructor(props) {
         super(props);
@@ -71,18 +63,18 @@ class EntrancePage extends Component {
 
                     <div className="in-building">
                         <div className="in-building-box"
-                            style={{boxShadow: `0 0 10px 5px ${this.state.colorMat[3] === 1 ? "#6293cd" : "#cdcdcd"}`}}>
+                             style={{boxShadow: `0 0 10px 5px ${this.state.colorMat[3] === 1 ? "#6293cd" : "#cdcdcd"}`}}>
                             <div className="in-building-box-title">
                                 Already in this building?
                             </div>
                             <Select className="in-building-box-search" options={this.state.roomOptions}
                                     placeholder="Select Your Current Nearest Room" value={this.state.roomValue}
-                                    onChange={this.handleRoomChange} />
+                                    onChange={this.handleRoomChange}/>
                         </div>
                     </div>
 
-                    <div style={{marginTop: '25vh', width: '100%', padding: '0 2%', boxSizing: 'border-box'}}>
-                        <Scrollbars style={{height: '50vh', width: '100%', whiteSpace: 'nowrap'}}>
+                    <div style={{marginTop: '25vh',marginLeft: '2vw', width: '100%', padding: '0 2%', boxSizing: 'border-box'}}>
+                        <Scrollbars style={{height: '50vh', width: '96%', whiteSpace: 'nowrap'}}>
                             <div className="entrance-box-container">
                                 <EntranceBox url={entranceInfo[this.props.building]["diag"]["img"]}
                                              name={entranceInfo[this.props.building]["diag"]["name"]}
@@ -107,14 +99,14 @@ class EntrancePage extends Component {
                         </Scrollbars>
                     </div>
                 </div>
-            
+
                 <FontAwesomeIcon
                     className="next-icon" icon={faAngleDoubleDown} size="5x"
-                        // onMouseOver={
-                        //     (e) => {
-                        //         e.preventDefault();
-                        //     }
-                        // }
+                    // onMouseOver={
+                    //     (e) => {
+                    //         e.preventDefault();
+                    //     }
+                    // }
                 />
             </div>
 

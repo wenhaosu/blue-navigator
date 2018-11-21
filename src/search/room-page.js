@@ -51,7 +51,7 @@ class RoomPage extends Component {
 
     render() {
         const {index} = this.state;
-        if (this.props.curFloor != this.props.destFloor) {
+        if (this.props.curFloor !== this.props.destFloor) {
             return (
                 <div className="room-page">
                     <div className="page-title">
@@ -64,8 +64,8 @@ class RoomPage extends Component {
                             onChange={this.handleChange}
                             style={styles.tabs}
                         >
-                            <Tab label="Floor 1"/>
-                            <Tab label="Floor 2"/>
+                            <Tab label="Start Floor" style={{fontSize: '25px'}}/>
+                            <Tab label="Target Floor" style={{fontSize: '25px'}}/>
                         </Tabs>
                         <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex}
                                         slideStyle={{height: '60vh'}}>
@@ -87,6 +87,7 @@ class RoomPage extends Component {
                                                  top: 0,
                                                  left: 0
                                              }}
+                                             alt="noImage"
                                              src={`https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_${this.props.curFloor}.png`}
                                         />
                                         <img
@@ -96,6 +97,7 @@ class RoomPage extends Component {
                                                 top: `${100 * roomInfo[this.props.curRoom]["y_loc"] / 1080}%`,
                                                 transform: 'translate(-50%,-90%)'
                                             }}
+                                            alt="noImage"
                                             src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/start.png"/>
                                         <img
                                             style={{
@@ -104,6 +106,7 @@ class RoomPage extends Component {
                                                 top: `${100 * roomInfo[this.props.curStair]["y_loc"] / 1080}%`,
                                                 transform: 'translate(-50%,-90%)'
                                             }}
+                                            alt="noImage"
                                             src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/goal.png"/>
                                     </div>
 
@@ -128,6 +131,7 @@ class RoomPage extends Component {
                                                  top: 0,
                                                  left: 0
                                              }}
+                                             alt="noImage"
                                              src={`https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_${this.props.destFloor}.png`}
                                         />
                                         <img
@@ -137,6 +141,7 @@ class RoomPage extends Component {
                                                 top: `${100 * roomInfo[this.props.destStair]["y_loc"] / 1080}%`,
                                                 transform: 'translate(-50%,-90%)'
                                             }}
+                                            alt="noImage"
                                             src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/start.png"/>
                                         <img
                                             style={{
@@ -145,6 +150,7 @@ class RoomPage extends Component {
                                                 top: `${100 * roomInfo[this.props.destRoom]["y_loc"] / 1080}%`,
                                                 transform: 'translate(-50%,-90%)'
                                             }}
+                                            alt="noImage"
                                             src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/goal.png"/>
                                     </div>
 
@@ -169,7 +175,7 @@ class RoomPage extends Component {
                             onChange={this.handleChange}
                             style={styles.tabs}
                         >
-                            <Tab label="Floor 1"/>
+                            <Tab label="Start & Target Floor" style={{fontSize: '25px'}}/>
                         </Tabs>
                         <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex}
                                         slideStyle={{height: '60vh'}}>
@@ -191,6 +197,7 @@ class RoomPage extends Component {
                                                  top: 0,
                                                  left: 0
                                              }}
+                                             alt="noImage"
                                              src={`https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_${this.props.curFloor}.png`}
                                         />
                                         <img
@@ -200,6 +207,7 @@ class RoomPage extends Component {
                                                 top: `${100 * roomInfo[this.props.curRoom]["y_loc"] / 1080}%`,
                                                 transform: 'translate(-50%,-90%)'
                                             }}
+                                            alt="noImage"
                                             src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/start.png"/>
                                         <img
                                             style={{
@@ -208,6 +216,7 @@ class RoomPage extends Component {
                                                 top: `${100 * roomInfo[this.props.destRoom]["y_loc"] / 1080}%`,
                                                 transform: 'translate(-50%,-90%)'
                                             }}
+                                            alt="noImage"
                                             src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/goal.png"/>
                                     </div>
 
