@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import buildingInfo from '../static/building-intro-info';
 import MapWithADirectionsRenderer from '../components/map-with-direction';
 import {geolocated} from 'react-geolocated';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons';
 
 class NavPage extends Component {
     constructor(props) {
@@ -35,6 +37,14 @@ class NavPage extends Component {
                                                         originLong={this.props.coords.longitude}
                                                         destination="Bob and Betty Beyster Building, Ann Arbor, MI"/>
                         </div>
+                        <FontAwesomeIcon
+                            className="next-icon" icon={faAngleDoubleDown} size="5x"
+                            // onMouseOver={
+                            //     (e) => {
+                            //         e.preventDefault();
+                            //     }
+                            // }
+                        />
                     </div>
                     : <div>Getting the location data&hellip; </div>;
     }
