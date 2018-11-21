@@ -6,7 +6,8 @@ import entranceInfo from '../static/entrance-info';
 import EntranceBox from "../components/entrance-box";
 import Select from "react-styled-select";
 import {Scrollbars} from 'react-custom-scrollbars';
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons';
 
 const roomOptions = [
     {value: '1670', label: '1670'},
@@ -93,6 +94,14 @@ class EntrancePage extends Component {
                                 onChange={this.handleRoomChange} />
                     </div>
                 </div>
+                <FontAwesomeIcon
+                    className="next-icon" icon={faAngleDoubleDown} size="5x"
+                        // onMouseOver={
+                        //     (e) => {
+                        //         e.preventDefault();
+                        //     }
+                        // }
+                />
             </div>
 
         );

@@ -4,6 +4,8 @@ import '../common.css';
 import PropTypes from 'prop-types';
 import buildingInfo from '../static/building-intro-info';
 import IntroBox from "../components/intro-box";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons';
 
 class IntroPage extends Component {
     constructor(props) {
@@ -26,6 +28,16 @@ class IntroPage extends Component {
                     Building Information
                 </div>
                 <IntroBox url={this.state.url} intro={this.state.intro} name={this.state.name}/>
+                <div>
+                <FontAwesomeIcon
+                    className="next-icon" icon={faAngleDoubleDown} size="5x"
+                    // onMouseOver={
+                    //     (e) => {
+                    //         e.preventDefault();
+                    //     }
+                    // }
+                />
+                </div>
             </div>
         );
     }
