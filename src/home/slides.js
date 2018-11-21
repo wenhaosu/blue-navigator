@@ -99,6 +99,7 @@ class Slides extends Component {
                             top: '50%',
                             left: '50%',
                             transform: 'translate(-50%, -50%)',
+                            zoom: windowWidth > 768 ? '150%' : 1,
                         }}/>
                     </div>)}
             </WindowContext.Consumer>
