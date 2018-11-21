@@ -37,8 +37,10 @@
 .in-building-box .in-building-box-title {
     position: relative;
     width: 40%;
-    text-align: center;
-    padding-top: 3vh;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
     font-family: 'CenturyGothic', serif;
     font-size: 20px;
     float: left;
