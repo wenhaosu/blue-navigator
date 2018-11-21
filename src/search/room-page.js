@@ -17,11 +17,8 @@ const styles = {
         minHeight: "60vh",
         color: "#fff"
     },
-    slide1: {
-    },
-    slide2: {
-
-    }
+    slide1: {},
+    slide2: {}
 };
 
 class RoomPage extends Component {
@@ -53,7 +50,7 @@ class RoomPage extends Component {
     }
 
     render() {
-        const { index } = this.state;
+        const {index} = this.state;
         return (
             <div className="room-page">
                 <div className="page-title">
@@ -66,18 +63,48 @@ class RoomPage extends Component {
                         onChange={this.handleChange}
                         style={styles.tabs}
                     >
-                        <Tab label="Floor 1" />
-                        <Tab label="Floor 2" />
+                        <Tab label="Floor 1"/>
+                        <Tab label="Floor 2"/>
                     </Tabs>
-                    <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex}>
+                    <SwipeableViews index={index} onChangeIndex={this.handleChangeIndex} slideStyle={{height: '60vh'}}>
                         <div style={Object.assign({}, styles.slide, styles.slide1)}>
-                            <img className="room-image" src={`https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_${this.props.curFloor}.png`} />
-                            <img style={{position: "relative", left: `${roomInfo[this.props.curRoom].xloc/1440}`, top: `${roomInfo[this.props.curRoom].yloc/1080}`}}
-                                 src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/start.png" />
-                            <img src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/goal.png" />
+                            <div style={{position: "relative"}}>
+                                <div style={{
+                                    position: 'absolute',
+                                    width: '66.7vh',
+                                    height: '50vh',
+                                    top: 0,
+                                    left: '50%',
+                                    transform: 'translate(-50%,0)'
+                                }}>
+                                    <img className="room-image"
+                                         style={{position: "absolute", width: '100%', height: '100%', top: 0, left: 0}}
+                                         src={`https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_${this.props.curFloor}.png`}
+                                    />
+                                    <img
+                                        style={{
+                                            position: "absolute",
+                                            left: `${100 * roomInfo[this.props.curRoom]["x_loc"] / 1440}%`,
+                                            top: `${100 * roomInfo[this.props.curRoom]["y_loc"] / 1080}%`,
+                                            transform: 'translate(-50%,-90%)'
+                                        }}
+                                        src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/start.png"/>
+                                    <img
+                                        style={{
+                                            position: "absolute",
+                                            left: `${100 * roomInfo[this.props.destRoom]["x_loc"] / 1440}%`,
+                                            top: `${100 * roomInfo[this.props.destRoom]["y_loc"] / 1080}%`,
+                                            transform: 'translate(-50%,-90%)'
+                                        }}
+                                        src="https://s3.amazonaws.com/eecs493/blue-navigator/marks/goal.png"/>
+                                </div>
+
+                            </div>
+
                         </div>
                         <div style={Object.assign({}, styles.slide, styles.slide2)}>
-                            <img className="room-image" src={`https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_${this.props.destFloor}.png`} />
+                            <img className="room-image"
+                                 src={`https://s3.amazonaws.com/eecs493/blue-navigator/floor_plans/floor_${this.props.destFloor}.png`}/>
                         </div>
                     </SwipeableViews>
                 </div>
@@ -85,6 +112,7 @@ class RoomPage extends Component {
         );
     }
 }
+
 RoomPage.propTypes = {
     curFloor: PropTypes.number,
     destFloor: PropTypes.number,

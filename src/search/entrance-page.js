@@ -49,7 +49,6 @@ class EntrancePage extends Component {
     }
 
     render() {
-        console.log(this.state.entrances);
         return (
             <div>
                 <div className="entrance-page">

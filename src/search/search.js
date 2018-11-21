@@ -3,11 +3,13 @@ import './search.css';
 import * as qs from 'query-string';
 import IntroPage from "./intro-page";
 import EntrancePage from "./entrance-page";
-import { Scroller, Section } from "react-fully-scrolled";
+import {Scroller, Section} from "react-fully-scrolled";
 import NavPage from "./nav-page";
 import RoomPage from "./room-page";
+import {WindowContext} from "../App";
+import Slide from "../home/slide";
 
-document.ontouchmove = function(ev) {
+document.ontouchmove = function (ev) {
     ev.preventDefault();
 };
 
@@ -32,7 +34,7 @@ class Search extends Component {
         console.log(this.state.room);
     }
 
-    setStartPoint(point){
+    setStartPoint(point) {
         this.setState({
             start: point
         });
@@ -43,22 +45,29 @@ class Search extends Component {
         return (
             <Scroller
                 curPage={1}
-                onBeforeScroll={(from, to) => {}}
-                onAfterScroll={page => {}}
+                onBeforeScroll={(from, to) => {
+                }}
+                onAfterScroll={page => {
+                }}
                 isEnabled={true}
             >
                 <Section>
-                    <IntroPage building={this.state.building} />
+                    <IntroPage building={this.state.building}/>
                 </Section>
                 <Section>
-                    <NavPage building={this.state.building} />
+                    <NavPage building={this.state.building}/>
                 </Section>
                 <Section>
                     <EntrancePage building={this.state.building} setFunc={this.setStartPoint}/>
                 </Section>
                 <Section>
-                    <RoomPage building={this.state.building}
-                              curFloor={1} destFloor={3} curRoom={"diag"} destRoom={"3777"}/>
+                    <WindowContext.Consumer>
+                        {({windowWidth, windowHeight}) => (
+                            <RoomPage building={this.state.building}
+                                      curFloor={1} destFloor={3} curRoom={"diag"} destRoom={"1670"}
+                                      windowWidth={windowWidth}
+                                      windowHeight={windowHeight}/>)}
+                    </WindowContext.Consumer>
                 </Section>
             </Scroller>
         );
