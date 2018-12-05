@@ -58,7 +58,7 @@ class EntrancePage extends Component {
             <div>
                 <div className="entrance-page">
                     <div className="page-title">
-                        Select your Entrance
+                        Select Entrance
                     </div>
 
                     <div className="in-building">
