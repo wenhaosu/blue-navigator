@@ -101,15 +101,15 @@ npm install
 npm start
 ```
 ## Usage
-1. On our home page, select (or text enter) your destination building and classroom, then press the enter icon. We currently only support Bob and Betty Beyster Building.
+1. On our home page, select (or text enter) your destination building and classroom. The dropbox options would be filtered based on user input. If the current input is not a valid result (either not exist or not supported by our system), no result will be shown in the dropbox. Then press the enter icon. An alert will be shown on the website. We currently only support Bob and Betty Beyster Building.
 
 2. The first page on the result html is a brief introduction of your selected building. Scroll down to the second page.
 
-3. The second page is our first navigation step: navigate from your current location to the destination building. You may need to turn on authorization of your current location in the pop-up balloon. The accuracy of your current location depends on internet and your device.
+3. The second page is our first navigation step: navigate from your current location to the destination building. You may need to turn on authorization of your current location in the pop-up notification window. The accuracy of your current location depends on the current internet connection and your device. Scroll down to the third page.
 
-4. The third page asks user to select their entrance when they reached the building. Users could also select the room which is closest to them if they are already in this building.
+4. The third page asks user to select their entrance when they reached the building. Users could also select the room which is closest to them if they are already in this building. Scroll down to the fourth page.
 
-5. The fourth page is our second navigation step: navigate to your destination room. Green mark denotes the start position and red mark denotes target position.
+5. The fourth page is our second navigation step: navigate to your destination room. Green mark denotes the start position and red mark denotes target position. If the start position and the target room are on the same floor, the map will be shown on only one tab. Otherwise there will be multiple tabs.
 
 ## Features
 * Use HTML, CSS, Javascript
