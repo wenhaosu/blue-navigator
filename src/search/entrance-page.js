@@ -74,7 +74,7 @@ class EntrancePage extends Component {
                     </div>
 
                     <div style={{marginTop: '25vh',marginLeft: '2vw', width: '100%', padding: '0 2%', boxSizing: 'border-box'}}>
-                        <Scrollbars style={{height: '50vh', width: '95.3%', whiteSpace: 'nowrap'}}>
+                        <Scrollbars style={{height: '54vh', width: '95.3%', whiteSpace: 'nowrap'}}>
                             <div className="entrance-box-container">
                                 <EntranceBox url={entranceInfo[this.props.building]["diag"]["img"]}
                                              name={entranceInfo[this.props.building]["diag"]["name"]}
