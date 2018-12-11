@@ -5,13 +5,13 @@
 
 ```
 .
-├── README.md
-├── package-lock.json
 ├── package.json
+├── package-lock.json
 ├── public
 │   ├── favicon.ico
 │   ├── index.html
 │   └── manifest.json
+├── README.md
 ├── sql
 │   ├── blue_navigator_db.sqlite3
 │   ├── buildings.json
@@ -23,7 +23,6 @@
     ├── App.js
     ├── App.test.js
     ├── common.css
-    ├── common.js
     ├── components
     │   ├── entrance-box.css
     │   ├── entrance-box.js
@@ -34,10 +33,10 @@
     │   ├── locations.json
     │   ├── map-with-direction.js
     │   ├── map-with-marker.js
-    │   ├── navbar-mobile.css
-    │   ├── navbar-mobile.js
     │   ├── navbar.css
     │   ├── navbar.js
+    │   ├── navbar-mobile.css
+    │   ├── navbar-mobile.js
     │   ├── searchbox.css
     │   └── searchbox.js
     ├── fonts
@@ -46,8 +45,6 @@
     │   ├── data.json
     │   ├── home.css
     │   ├── home.js
-    │   ├── library-card.css
-    │   ├── library-card.js
     │   ├── pitch-card.css
     │   ├── pitch-card.js
     │   ├── pitch.css
@@ -81,7 +78,7 @@
         ├── logo-white-frame.png
         └── logo-white-frame.svg
 
-9 directories, 66 files
+9 directories, 63 files
 ```
 
 ## Getting Started
