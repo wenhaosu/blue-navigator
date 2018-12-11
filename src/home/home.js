@@ -29,7 +29,8 @@ class Home extends Component {
 
     updateWindowDimensions() {
         this.setState({
-            demoHeight: this.column1.current && this.column2.current && this.demo.current ? Math.max(this.column1.current.clientHeight, this.column2.current.clientHeight, this.demo.current.clientHeight) + 150 : 0
+            demoHeight: this.column1.current && this.column2.current && this.demo.current ?
+                Math.max(this.column1.current.clientHeight, this.column2.current.clientHeight, this.demo.current.clientHeight) + 150 : 0
         });
     }
 

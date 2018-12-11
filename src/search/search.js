@@ -3,15 +3,15 @@ import './search.css';
 import * as qs from 'query-string';
 import IntroPage from "./intro-page";
 import EntrancePage from "./entrance-page";
-import {Scroller, Section} from "react-fully-scrolled";
+import {Scroller, Section} from "custom-react-fully-scrolled";
 import NavPage from "./nav-page";
 import RoomPage from "./room-page";
 import {WindowContext} from "../App";
 import rooms from "../static/locations"
 
-document.ontouchmove = function (ev) {
-    ev.preventDefault();
-};
+// document.ontouchmove = function (ev) {
+//     ev.preventDefault();
+// };
 
 class Search extends Component {
     constructor(props) {

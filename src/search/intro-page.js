@@ -7,6 +7,10 @@ import IntroBox from "../components/intro-box";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons';
 
+document.ontouchmove = function (ev) {
+    ev.preventDefault();
+};
+
 class IntroPage extends Component {
     constructor(props) {
         super(props);

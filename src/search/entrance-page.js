@@ -68,6 +68,7 @@ class EntrancePage extends Component {
                                 Already in this building?
                             </div>
                             <Select className="in-building-box-search" options={this.state.roomOptions}
+                                    style={{touchAction: 'none'}}
                                     placeholder="Select Your Current Nearest Room" value={this.state.roomValue}
                                     onChange={this.handleRoomChange}/>
                         </div>
